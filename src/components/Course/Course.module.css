@@ -1,0 +1,103 @@
+@import url('../../variables.css');
+
+@font-face {
+    font-family: 'carmen-sans-md';
+    src: url('../../fonts/CarmenSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'carmen-sans-lg';
+    src: url('../../fonts/CarmenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'carmen-sans-regular';
+    src: url('../../fonts/CarmenSans-Regular.ttf') format('truetype');
+}
+
+
+.courseContainer{
+    height: auto;
+    padding: 80px 10px 0 70px;     
+
+}
+
+.courseTitle{
+    color: var(--primary-color);
+    font-family: 'carmen-sans-lg', sans-serif;
+    font-size: clamp(25px, 4.5vw, 80px);
+
+}
+
+.courseTitle img {
+    vertical-align: middle;
+    width: clamp(200px, 25vw, 370px);
+    padding-bottom: 1%;
+}
+
+.courseSubTitle{
+    color: var(--primary-color);
+    font-family: 'carmen-sans-lg', sans-serif;
+    font-size: clamp(15px, 2.5vw, 30px);
+}
+.cardContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Predeterminado: las tarjetas en columnas */
+    gap: 15px;
+    justify-content: center;
+    padding: 50px 30px 0 30px;
+
+}
+
+.cardParentOne, .cardParentTwo {
+    display: flex;
+    gap: 15px;
+    flex-direction: row; /* Mostrar las cards en columna por defecto */
+    justify-content: center;
+}
+
+
+.levelTestContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.levelTestBtn button{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    width: 25vw;
+    max-width: 300px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    padding: 10px 30px 15px 30px;
+    font-size: clamp(20px, 2vw, 30px);
+    font-family: 'carmen-sans-regular', sans-serif;
+}
+
+@media (max-width: 1024px){
+    .courseContainer{
+        padding : 40px 10px 0 30px;
+    }
+    .courseTitle img {
+        vertical-align: middle;
+        width: 150px;
+    }    
+    .cardContainer {
+        flex-direction: row; /* Cuando la pantalla es mayor a 470px, las dos filas se vuelven columnas */
+        gap: 15px; /* Espaciado entre las dos "columnas" de tarjetas */
+    }
+
+    .cardParentOne, .cardParentTwo {
+        flex-direction: column; /* Las tarjetas siguen en columna dentro de cada contenedor */
+        gap: 15     px;
+    }
+}
+@media (max-width: 375px) {
+    .cardContainer{
+      gap: 5px;
+    }
+}

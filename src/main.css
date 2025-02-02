@@ -1,0 +1,45 @@
+@import url('./variables.css');
+@font-face {
+    font-family: 'carmen-sans-md';
+    src: url('../../fonts/CarmenSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'carmen-sans-lg';
+    src: url('../../fonts/CarmenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'carmen-sans-regular';
+    src: url('../../fonts/CarmenSans-Regular.ttf') format('truetype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: var(--light-color);
+    height: 10000px;
+}
+
+h1{
+    font-size: clamp(3rem, 4vw, 5vw);
+    font-weight: 600;
+    color: #ffffff;
+    display: inline;
+    font-family: 'carmen-sans-md';
+}
+h2{
+    display: inline;
+    font-size: clamp(2rem, 3vw, 4vw);
+    font-weight: 200;
+}
+h5{
+    font-size: clamp(1rem, 1.5vw, 2vw);
+    font-weight: 200;
+    color: #ffffff;
+}

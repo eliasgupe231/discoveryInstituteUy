@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'carmen-sans-md';
+  src: url('../../fonts/CarmenSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'carmen-sans-lg';
+  src: url('../../fonts/CarmenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'carmen-sans-regular';
+  src: url('../../fonts/CarmenSans-Regular.ttf') format('truetype');
+}
+
+
+.card {
+  width: clamp(300px, 25vw, 400px);
+  height: 40vh;
+  padding: 20px;
+  border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: scale(1.03);
+  transform: rotate(2deg);
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardFront {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.cardTitle {
+  font-family: 'carmen-sans-lg';
+  text-align: center;
+  font-size: clamp(17px, 2vw, 30px);
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.cardList {
+  list-style : none;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cardList li {
+  font-family: 'carmen-sans-lg';
+  color: #ffffff;
+  font-size: clamp(12px, 1.5vw, 20px);
+}
+
+.cardFooter {
+  margin-top: 10px;
+  font-size: clamp(10px, 1.5vw, 15px);
+  font-family: 'carmen-sans-lg';
+  color: #ffffff;
+}
+
+
+
+@media (max-width: 1024px){
+    .cardFront {
+      gap: 5px;
+    }
+    
+    .card{
+      width: clamp(170px, 40vw, 400px);
+      height: clamp(250px, 30vh, 350px);
+  }
+}
+
