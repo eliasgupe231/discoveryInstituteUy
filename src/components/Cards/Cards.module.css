@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'carmen-sans-md';
-  src: url('../../fonts/CarmenSans-Medium.ttf') format('truetype');
+  src: url('../public/fonts/CarmenSans-Medium.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'carmen-sans-lg';
-  src: url('../../fonts/CarmenSans-Light.ttf') format('truetype');
+  src: url('../public/fonts/CarmenSans-Light.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'carmen-sans-regular';
-  src: url('../../fonts/CarmenSans-Regular.ttf') format('truetype');
+  src: url('../public/fonts/CarmenSans-Regular.ttf') format('truetype');
 }
 
 
@@ -81,4 +81,3 @@
       height: clamp(250px, 30vh, 350px);
   }
 }
-

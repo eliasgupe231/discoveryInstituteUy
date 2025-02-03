@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://eliasgupe231.github.io/discoveryInstituteUy",
+  "homepage": "https://eliasgupe231.github.io/discoveryInstituteUy/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

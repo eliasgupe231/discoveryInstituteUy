@@ -1,25 +1,22 @@
-import React from 'react'
-import Header from './components/Header/Header'
-import Nosotros from './pages/Nosotros'
-import Cursos from './pages/Cursos'
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Inicio from './pages/Inicio'
+import React from 'react';
+import Header from './components/Header/Header';
+import Nosotros from './pages/Nosotros';
+import Cursos from './pages/Cursos';
+import Inicio from './pages/Inicio';
+import { Routes, Route } from 'react-router-dom';
 
 
-
-function App(){
+function App() {
     return (
-        < >
-        <Header/>
-        <Router>
-            <Routes>
-                <Route path = "/" element = {<Inicio/>}/>
-                <Route path = "./pages/Nosotros.jsx" element = {<Nosotros/>}/>
-                <Route path = "./pages/Cursos.jsx" element = {<Cursos/>}/>
+        <>
+            <Header />
+            <Routes basename="/discoveryInstituteUy">
+                <Route path="/" element={<Inicio />} />
+                <Route path="/nosotros" element={<Nosotros />} />
+                <Route path="/cursos" element={<Cursos />} />
             </Routes>
-        </Router>
         </>
-    )
+    );
 }
 
-export default App
+export default App;
