@@ -57,7 +57,7 @@ const Course = () => {
     return (
         <>
         <section className={styles.courseContainer}>
-            <div className={styles.courseText}>
+            <div>
                 <h1 className={styles.courseTitle}>Aprendé inglés en <img src={logo} alt="logo de la empresa" />: </h1>
                 <p className={styles.courseSubTitle}>¡Mira todas las opciones que tenemos para vos!</p>    
             </div>
@@ -77,8 +77,11 @@ const Course = () => {
         <section className={styles.levelTestContainer}>
             <div className={styles.levelTestBtn}>
                 <button>
-                    Test de nivel
+                    <p>Test de nivel</p>
                 </button>
+                <p>
+                    ¡Hace este breve cuestionario para saber en que nivel tienes que emepzar!
+                </p>
             </div>
         </section>
         </>

@@ -1,5 +1,5 @@
 import React from "react";
-import Header from '../components/Header/Header'
+import Experience from "../components/Experience/Experience";
 import Presentation from '../components/Presentation/Presentation'
 import Course from "../components/Course/Course"
 
@@ -10,6 +10,7 @@ function Inicio (){
         <>  
         <Presentation/>
         <Course/>
+        <Experience/>
         </>
     )
 }
