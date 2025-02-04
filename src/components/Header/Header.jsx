@@ -51,8 +51,8 @@ const Header =  () =>{
             </NavLink>
             <nav className={ menuBurguer ? styles.nav : styles.navOpen}>
                 <NavLink 
-                    to = "/Inicio"
-                    className={({ isActive }) => isActive ? styles.activeLinkInicio : styles.linkInicio}> 
+                    to = "/"
+                    className= {styles.linkInicio}> 
                     Inicio
                 </NavLink>
                 <NavLink 

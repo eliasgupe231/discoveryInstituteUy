@@ -80,3 +80,16 @@
       height: clamp(250px, 30vh, 350px);
   }
 }
+
+@media (max-width :468px) {
+  .cardTitle {
+    font-size: 14px;
+  }
+  .cardList li {
+    font-size: 10px;
+  }
+  .card{
+    width: clamp(130px, 40vw, 400px);
+    height: clamp(280px, 30vh, 280px);
+  }
+}

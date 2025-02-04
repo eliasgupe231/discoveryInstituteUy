@@ -127,7 +127,7 @@
     .presentation{
         flex-direction: column;
         align-items: center;
-        padding: 0 0 0 30px;
+        padding-left:30px;
     }
 
     .presentationTextCTA{
@@ -215,9 +215,18 @@
         font-size: clamp(1.5em, 5vw, 7vw);
     }
 }
-
-@media (max-width: 375px) {
+@media (max-width : 766px) {
     .presentation{
+        height: 500px;
+        border-bottom-left-radius: 70px;
+        border-bottom-right-radius: 70px;
+    }
+}
+
+@media (max-width : 594px){
+    .presentation{
+        height: 400px;
         padding-left: 10px;
     }
 }
+
