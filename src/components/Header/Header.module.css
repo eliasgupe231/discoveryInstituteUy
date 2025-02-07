@@ -23,6 +23,7 @@
     padding: 30px 10% 0 65px;    
     /* height: 100px; */
     position: sticky;
+    z-index: 100;
 }
 .inicioLink{        
     width: 25%;
@@ -95,6 +96,17 @@ nav button:hover{
     text-decoration: underline;
 }
 
+.transparentBgNonVisible{
+    display: none;
+}
+
+.closeIcon {
+    top: 15px;
+    right: 20px;
+    color: white;
+    cursor: pointer;
+    z-index: 20;
+}
 @media (max-width: 1024px){
     .linkInicio{
         display: block;
@@ -112,7 +124,7 @@ nav button:hover{
     }
 
     .header{
-        align-items: center;
+        align-items: center;    
         padding: 30px 10% 0 25px;    
     }
 
@@ -127,21 +139,32 @@ nav button:hover{
 
     .navOpen{
         right: 0;
+        top: 0;
         position: absolute;
-        top: 150px;
         display: flex;
         flex-direction: column;
         align-items: start;
         padding: 50px;
-        justify-content: center;
         color: #ffffff;
-        background-color: #8ecae6f8;
-        width: 100%;
+        background-color: #8ecae6f8;                
+        width: 50%; 
         min-width: 200px;
-        height: 300px;
+        height: 100vh;   
         border-radius: 10px;
+        z-index: 10;
     }
 
+    .transparentBg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1000vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 5;
+    }
+    
+    
     .navOpen .link{
         font-size: clamp(1.5rem, 2rem, 4rem);
         width: 100%;
@@ -174,7 +197,7 @@ nav button:hover{
         border-color: #c5e9fa;
     }
     .navOpen :nth-child(3){
-        border: 1px;
+        border: 1px;    
         border-style: none none solid none;
         border-color: #c5e9fa;
     }
@@ -186,8 +209,5 @@ nav button:hover{
 @media (max-width: 470px){
     .headerLg{
         width: 250px;
-    }
-    .navOpen{
-        top: 120px;
     }
 }

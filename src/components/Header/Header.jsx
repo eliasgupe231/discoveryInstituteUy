@@ -16,14 +16,9 @@ const Header =  () =>{
         setMenuBurguer(!menuBurguer);
     }
 
-    // const [menu , setMenu] = useState (true);
-    // const changeMenu = () => {
-    //     setMenu = (!changeMenu)
-    // }
-
     return (
         <>
-        <section className={styles.header}>
+        <header className={styles.header}>
             <NavLink 
                 to = "/">
                 <img className={styles.headerLg} src= {logo} alt="Logo de la empresa"/>
@@ -45,30 +40,31 @@ const Header =  () =>{
                     className={styles.iconMenuBurguerX} 
                     icon={faXmark} 
                     size="3x" 
-                                />
+                />
+
                 )
             }
             </NavLink>
-            <nav className={ menuBurguer ? styles.nav : styles.navOpen}>
-                <NavLink 
-                    to = "/"
-                    className= {styles.linkInicio}> 
-                    Inicio
-                </NavLink>
-                <NavLink 
-                    to = "/nosotros"
-                    className={({ isActive }) => isActive ? styles.activeLink : styles. link}> 
-                    Nosotros
-                </NavLink>
-                <NavLink 
-                    to = "/cursos"
-                    className={({ isActive }) => isActive ? styles.activeLink : styles.link}
-                    > Cursos
-                </NavLink>
+            <section
+            onClick={() => changeMenuBurguer()}
+            className={menuBurguer ? styles.transparentBgNonVisible : styles.transparentBg}>
+             </section>
+
+            <nav className={menuBurguer ? styles.nav : styles.navOpen}>
+                {!menuBurguer && (
+                    <FontAwesomeIcon 
+                        className={styles.closeIcon} 
+                        icon={faXmark} 
+                        size="3x" 
+                        onClick={() => changeMenuBurguer()}
+                    />
+                )}
+                <NavLink to="/" className={styles.linkInicio}>Inicio</NavLink>
+                <NavLink to="/nosotros" className={({ isActive }) => isActive ? styles.activeLink : styles.link}>Nosotros</NavLink>
+                <NavLink to="/cursos" className={({ isActive }) => isActive ? styles.activeLink : styles.link}>Cursos</NavLink>
                 <button>Contacto</button> 
             </nav>
-
-        </section>
+        </header>
         </>
     );
 }

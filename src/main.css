@@ -29,9 +29,8 @@ body{
 
 h1{
     font-size: clamp(3rem, 4vw, 5vw);
-    font-weight: 600;
     color: #ffffff;
-    display: inline;
+    display: inline;    
     font-family: 'carmen-sans-md', sans-serif;
 }
 h2{

@@ -13,7 +13,7 @@ const Experience = () =>{
             </div>
             <div className={styles.counterSection}>
                 <div className={styles.aniosContainer}>
-                    <Counter  label={"+"} endValue={25} duration={40}/>
+                    <Counter  label={"+"} endValue={25} duration={80}/>
                     <p>Años aprendiendo juntos inglés</p>
                 </div>
                 <div className={styles.studentsContainer}>
