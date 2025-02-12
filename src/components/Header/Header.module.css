@@ -247,5 +247,6 @@ nav button:hover{
     }
     .navOpen{
         padding: 30px;
+        width: 100%;
     }
 }

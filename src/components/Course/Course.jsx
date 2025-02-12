@@ -1,91 +1,115 @@
-import React from "react"
-import styles from './Course.module.css'
-import logo from '../../assets/Logo sin baseline-10.png'
-import Card from "../Cards/Cards"
+import React from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import styles from './Course.module.css';
+import logo from '../../assets/Logo sin baseline-10.png';
+import Card from "../Cards/Cards";
 
 const Course = () => {
     // Colores o estilos personalizados para cada card
-    const cardDetails= [
+    const cardDetails = [
         { 
-            style : {color: '#000000', backgroundColor: 'var(--orange)', fontSize: '20px'},
-            content : {
+            style: {color: '#000000', backgroundColor: 'var(--orange)', fontSize: '20px'},
+            content: {
                 title: 'Cursos anuales para niños',
-                details : ['10 meses', 'Clases grupales', 'Presencial'],
-                footer : '¡Juego, dinamismo, innovación y trabajo grupal!',
+                details: ['-10 meses', '-Clases grupales', '-Presencial'],
             },
-        }, // Card 1
-
-        { style : {
-            color: '#000000', backgroundColor: 'var(--seaBlue)', fontSize: '20px'
-            },
-            content : {
-                title : 'Cursos anuales para jovenes',
-                details : ['10 meses', 'Clases grupales', 'Presencial'],
-                footer : 'Usamos diversas herramientas y tecnologías para enriquecer el proceso de aprendizaje. ¡Aprendemos jugando!',
-            },
-        }, // Card 2
+        },
         { 
-            style : {color: '#000000', backgroundColor: 'var(--violet)', fontSize: '20px'},
-            content : {
-                title : 'Clases particulares de apoyo',
-                details : ['Apoyo liceales o escolares preparacion de pruebas y examenes', 'Clases individuales', 'Presencial'],
+            style: {color: '#000000', backgroundColor: 'var(--seaBlue)', fontSize: '20px'},
+            content: {
+                title: 'Cursos anuales para jóvenes',
+                details: ['-10 meses', '-Clases grupales', '-Presencial'],
             },
-        }, // Card 3
+        },
         { 
-            style : {color: '#000000', backgroundColor: 'var(--primary-color)', fontSize: '20px'},
-            content : {
-                title : 'Cursos semestrales para adultos',
-                details : ['2 bloques de 5 meses', 'Clases grupales', 'Presencial, hibrido, o virtual'],
+            style: {color: '#000000', backgroundColor: 'var(--violet)', fontSize: '20px'},
+            content: {
+                title: 'Clases particulares de apoyo',
+                details: ['-Apoyo liceales o escolares preparación de pruebas y exámenes', '-Clases individuales', '-Presencial'],
             },
-        }, // Card 4
+        },
         { 
-            style : {color: '#000000', backgroundColor: 'var(--secondary-color)', fontSize: '20px'},
-            content : {
-                title : 'Cursos para objetivos especificos',
-                details : ['Empresa, turismo, educacion, medicina, etc.', '5 meses', 'Presencial, hibrido o virtual'],
+            style: {color: '#000000', backgroundColor: 'var(--primary-color)', fontSize: '20px'},
+            content: {
+                title: 'Cursos semestrales para adultos',
+                details: ['-2 bloques de 5 meses', '-Clases grupales', '-Presencial, híbrido, o virtual'],
             },
-        }, // Card 5
+        },
         { 
-            style : {color: '#000000', backgroundColor: 'var(--cream)', fontSize: '20px'},
-            content :{
-                title : 'Preparacion de examenes internacionales',
-                details : ['10 meses', 'Clases grupales', 'Presencial o hibrido'],
-            }
-        }   // Card 6
+            style: {color: '#000000', backgroundColor: 'var(--secondary-color)', fontSize: '20px'},
+            content: {
+                title: 'Cursos para objetivos específicos',
+                details: ['-Empresa, turismo, educación, medicina, etc.', '-5 meses', '-Presencial, híbrido o virtual'],
+            },
+        },
+        { 
+            style: {color: '#000000', backgroundColor: 'var(--cream)', fontSize: '20px'},
+            content: {
+                title: 'Preparación de exámenes internacionales',
+                details: ['-10 meses', '-Clases grupales', '-Presencial o híbrido'],
+            },
+        }
     ];
+
+    // Obtenemos el progreso del scroll usando useScroll
+    const { scrollYProgress } = useScroll();
+
+    // Definir la opacidad en función del progreso del scroll
+    const opacity = useTransform(scrollYProgress, [0, 0.25], [0, 2]);
+
+    // Definir la escala en función del progreso del scroll (puede cambiar según tu preferencia)
+    const scale = useTransform(scrollYProgress, [0, 0.12], [0.8, 1]);
 
     return (
         <>
-        <section className={styles.courseContainer}>
-            <div>
-                <h1 className={styles.courseTitle}>Aprendé inglés en <img src={logo} alt="logo de la empresa" />: </h1>
-                <p className={styles.courseSubTitle}>¡Mira todas las opciones que tenemos para vos!</p>    
-            </div>
-        </section>
-        <section className={styles.cardContainer}>
-            <div className={styles.cardParentOne}>            
-                {cardDetails.slice(0 ,3).map((card, index) => (
-                    <Card key={index} style={card.style} content={card.content} />
-                ))}
-            </div>
-            <div className={styles.cardParentTwo}>
-                {cardDetails.slice(3 ,6).map((card, index) => (
-                    <Card key={index + 3} style={card.style} content={card.content} />
-                ))}
-            </div>
-        </section>
-        <section className={styles.levelTestContainer}>
-            <div className={styles.levelTestBtn}>
-                <button>
-                    <p>Test de nivel</p>
-                </button>
-                <p>
-                    ¡Hace este breve cuestionario para saber en que nivel tienes que emepzar!
-                </p>
-            </div>
-        </section>
+            <section className={styles.courseContainer}>
+                <div>
+                    <h1 className={styles.courseTitle}>Aprendé inglés en <img src={logo} alt="logo de la empresa" />: </h1>
+                    <p className={styles.courseSubTitle}>¡Mira todas las opciones que tenemos para vos!</p>
+                </div>
+            </section>
+
+            <section className={styles.cardContainer}>
+                {/* Ajustamos las tarjetas para que se muestren con la opacidad y escala controladas */}
+                <motion.div
+                    className={styles.cardParentOne}
+                    style={{
+                        opacity,
+                        scale,
+                        transition: 'opacity 0.3s ease-out, scale 0.3s ease-out', // Transiciones suaves
+                    }}
+                >
+                    {cardDetails.slice(0, 3).map((card, index) => (
+                        <Card key={index} style={card.style} content={card.content} />
+                    ))}
+                </motion.div>
+
+                <motion.div
+                    className={styles.cardParentTwo}
+                    style={{
+                        opacity,
+                        scale,
+                        transition: 'opacity 0.3s ease-out, scale 0.3s ease-out', // Transiciones suaves
+                    }}
+                >
+                    {cardDetails.slice(3, 6).map((card, index) => (
+                        <Card key={index + 3} style={card.style} content={card.content} />
+                    ))}
+                </motion.div>
+            </section>
+
+            <section className={styles.levelTestContainer}>
+                <div className={styles.levelTestBtn}>
+                    <button>
+                        <p>Test de nivel</p>
+                    </button>
+                    <p>
+                        ¡Haz este breve cuestionario para saber en qué nivel tienes que empezar!
+                    </p>
+                </div>
+            </section>
         </>
     );
-}
+};
 
 export default Course;

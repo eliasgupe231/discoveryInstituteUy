@@ -26,7 +26,7 @@ const Header = () => {
         to="/"
         className={menuBurguer ? styles.iconMenuBurguer : styles.notShowMenuBurguer}
       >
-          <FontAwesomeIcon className={styles.iconMenuBurguerBars} icon={faBars} size="3x" />
+          <FontAwesomeIcon className={styles.iconMenuBurguerBars} icon={faBars} size="3x" />  
       </NavLink>
 
       {/* Fondo oscuro al abrir el menú */}

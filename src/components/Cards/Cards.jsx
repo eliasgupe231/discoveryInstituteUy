@@ -3,17 +3,16 @@ import styles from './Cards.module.css';
 
 const Card = ({ style, content }) => {
   return (
-    <div className={styles.card} style={{ backgroundColor: style.backgroundColor }}>
-      <div className={styles.cardInner}>
-        <div className={styles.cardFront} style={{ color: style.color, fontSize: style.fontSize }}>
-          <h2 className={styles.cardTitle}> {content.title} </h2>
-          <ul className={styles.cardList}>
-            {content.details.map((detail, index) => (
-              <li key={index}>{detail}</li>
-            ))}
-          </ul>
-          <p className={styles.cardFooter}>{content.footer}</p>
-        </div>
+    <div className={styles.card} style={style}>
+      <div className={styles.TitleContainer}>
+        <p className={styles.cardTitle}>{content.title}</p>
+      </div>
+      <div className={styles.cardContent} style={style}>
+        <ul className={styles.cardDetails}>
+          {content.details.map((detail, index) => (
+            <li key={index} className={styles.cardDetailItem}>{detail}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
