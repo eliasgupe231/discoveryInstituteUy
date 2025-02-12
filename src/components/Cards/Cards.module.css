@@ -17,7 +17,7 @@
 .card {
   position: relative;
   width: clamp(300px, 20vw, 500px);
-  height: clamp(200px, 40vh, 800px);
+  height: clamp(150px, 30vh, 500px);
   border-radius: 25px;
   display: flex;
   align-items: center;

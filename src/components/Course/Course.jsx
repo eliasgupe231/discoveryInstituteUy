@@ -55,10 +55,10 @@ const Course = () => {
     const { scrollYProgress } = useScroll();
 
     // Definir la opacidad en función del progreso del scroll
-    const opacity = useTransform(scrollYProgress, [0, 0.25], [0, 2]);
+    const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 2]);
 
     // Definir la escala en función del progreso del scroll (puede cambiar según tu preferencia)
-    const scale = useTransform(scrollYProgress, [0, 0.12], [0.8, 1]);
+    const scale = useTransform(scrollYProgress, [0, 0.1], [0.8, 1]);
 
     return (
         <>
