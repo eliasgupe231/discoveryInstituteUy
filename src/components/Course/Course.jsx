@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import styles from './Course.module.css';
 import logo from '../../assets/Logo sin baseline-10.png';
 import Card from "../Cards/Cards";
+import { useEffect, useState } from "react";
 
 const Course = () => {
     // Colores o estilos personalizados para cada card
@@ -53,30 +54,42 @@ const Course = () => {
 
     // Obtenemos el progreso del scroll usando useScroll
     const { scrollYProgress } = useScroll();
+    const [isMobile, setIsMobile] = useState(false);
 
-    // Definir la opacidad en función del progreso del scroll
-    const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 2]);
+    // Detectar si el usuario está en mobile
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768); // Consideramos mobile si es menor a 768px
+        };
 
-    // Definir la escala en función del progreso del scroll (puede cambiar según tu preferencia)
-    const scale = useTransform(scrollYProgress, [0, 0.1], [0.8, 1]);
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    // Animaciones diferentes para desktop y mobile
+    const opacity = useTransform(scrollYProgress, [0, isMobile ? 0.04 : 0.1], [0.1, 1]);
+    const scale = useTransform(scrollYProgress, [0, isMobile ? 0.05 : 0.08], [0.8, 1]);
 
     return (
         <>
             <section className={styles.courseContainer}>
                 <div>
-                    <h1 className={styles.courseTitle}>Aprendé inglés en <img src={logo} alt="logo de la empresa" />: </h1>
+                    <h1 className={styles.courseTitle}>
+                        Aprendé inglés en <img src={logo} alt="logo de la empresa" />:
+                    </h1>
                     <p className={styles.courseSubTitle}>¡Mira todas las opciones que tenemos para vos!</p>
                 </div>
             </section>
 
             <section className={styles.cardContainer}>
-                {/* Ajustamos las tarjetas para que se muestren con la opacidad y escala controladas */}
+                {/* Ajustamos las tarjetas con animaciones mejoradas para mobile */}
                 <motion.div
                     className={styles.cardParentOne}
                     style={{
                         opacity,
                         scale,
-                        transition: 'opacity 0.3s ease-out, scale 0.3s ease-out', // Transiciones suaves
+                        transition: "opacity 0.2s ease-out, scale 0.2s ease-out",
                     }}
                 >
                     {cardDetails.slice(0, 3).map((card, index) => (
@@ -89,7 +102,7 @@ const Course = () => {
                     style={{
                         opacity,
                         scale,
-                        transition: 'opacity 0.3s ease-out, scale 0.3s ease-out', // Transiciones suaves
+                        transition: "opacity 0.2s ease-out, scale 0.2s ease-out",
                     }}
                 >
                     {cardDetails.slice(3, 6).map((card, index) => (
@@ -103,13 +116,11 @@ const Course = () => {
                     <button>
                         <p>Test de nivel</p>
                     </button>
-                    <p>
-                        ¡Haz este breve cuestionario para saber en qué nivel tienes que empezar!
-                    </p>
                 </div>
             </section>
         </>
     );
 };
+
 
 export default Course;

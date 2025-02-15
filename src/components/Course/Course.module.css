@@ -51,6 +51,7 @@
     display: flex;
     gap: 20px;
     flex-direction: row; /* Mostrar las cards en columna por defecto */
+    align-items: center;
     justify-content: center;
 }
 
@@ -102,7 +103,7 @@
 
 @media (max-width: 1024px){
     .courseContainer{
-        padding : 40px 10px 0 30px;
+        padding : 30px 10px 0 30px;
     }
     .courseTitle img {
         vertical-align: middle;
@@ -111,11 +112,16 @@
     .cardContainer {
         flex-direction: row; /* Cuando la pantalla es mayor a 470px, las dos filas se vuelven columnas */
         gap: 15px; /* Espaciado entre las dos "columnas" de tarjetas */
+        padding: 10px 30px 0 30px;
+    }
+
+    .levelTestContainer {
+        padding-top: 30px;
     }
 
     .cardParentOne, .cardParentTwo {
         flex-direction: column; /* Las tarjetas siguen en columna dentro de cada contenedor */
-        gap: 15px;
+        gap: 20px;
     }
 }
 @media (max-width:580px){
@@ -127,7 +133,6 @@
 
 @media (max-width: 375px) {
     .cardContainer{
-        gap: 10px;
-        padding: 50px 0 0 0;
+        padding: 20px 0 0 0;
     }
 }
