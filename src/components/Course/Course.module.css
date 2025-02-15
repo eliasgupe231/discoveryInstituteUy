@@ -24,6 +24,7 @@
 .courseTitle{
     color: var(--primary-color);
     font-size: clamp(25px, 4.5vw, 80px);    
+    font-family: 'carmen-sans-regular', sans-serif;
 }
 
 .courseTitle img {
@@ -133,6 +134,6 @@
 
 @media (max-width: 375px) {
     .cardContainer{
-        padding: 20px 0 0 0;
+        padding: 30px 0 0 0;
     }
 }
