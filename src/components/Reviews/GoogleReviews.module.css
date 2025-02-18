@@ -1,0 +1,217 @@
+@font-face {
+  font-family: 'carmen-sans-md';
+  src: url('../public/fonts/CarmenSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'carmen-sans-lg';
+  src: url('../public/fonts/CarmenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'carmen-sans-regular';
+  src: url('../public/fonts/CarmenSans-Regular.ttf') format('truetype');
+}
+
+.reviewContainer {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background: var(--secondary-color);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 200px;
+}
+
+.review {
+  padding: 10px;
+  border-radius: 12px;  
+  background: rgba(255, 255, 255, 0.308); /* Fondo semitransparente */
+  backdrop-filter: blur(3px); /* Desenfoque para mejorar la transparencia */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.review:hover{
+  transform: translateY(-1px); /* Efecto de elevación */
+}
+
+.author {
+  font-family: 'carmen-sans-regular', sans-serif;
+  font-weight: 700;
+  color: #000000;
+}
+
+.rating {
+  color: #ffa500;
+}
+.review p{
+  font-family: 'carmen-sans-lg', sans-serif;
+}
+/* Botones de navegación redondos */
+/* From Uiverse.io by vinodjangid07 */ 
+.navButton1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.452);
+  border: none;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.svgIcon1 {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon1 path {
+  fill: white;
+}
+
+.navButton1:hover {
+  background-color: rgba(255, 255, 255, 0.199); 
+  width: 80px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  align-items: center;
+}
+
+.navButton1:hover .svgIcon1 {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(-300%);
+}
+
+.navButton1::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Previous";
+  color: white;
+  font-family: 'carmen-sans-regular', sans-serif;
+  /* transition-duration: .3s; */
+  font-size: 0px;
+}
+
+.navButton1:hover::before {
+  font-size: 12px;
+  opacity: 1;
+  bottom: unset;
+  /* transform: translateY(-30px); */
+  transition-duration: 0.3s;
+}
+/* --------------------------- */
+
+.navButton2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.452);
+  border: none;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  rotate: -180deg;
+}
+
+.svgIcon2 {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon2 path {
+  fill: white;
+}
+
+.navButton2:hover {
+  background-color: rgba(255, 255, 255, 0.199); 
+  width: 80px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  align-items: center;
+}
+
+.navButton2:hover .svgIcon2 {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
+}
+
+.navButton2::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Next";
+  rotate: 180deg;
+  color: white;
+  font-family: 'carmen-sans-regular', sans-serif;
+  /* transition-duration: .3s; */
+  font-size: 0px;
+}
+
+.navButton2:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  /* transform: translateY(-30px); */
+  transition-duration: 0.3s;
+}
+
+.disabled {
+  opacity: 0.5; /* Reduce la opacidad para indicar que está deshabilitado */
+  cursor: not-allowed; /* Cambia el cursor para indicar que no se puede hacer clic */
+}
+
+.disabled:hover::before {
+  display: none; /* Evita que aparezca el texto "Previous" o "Next" */
+}
+
+.disabled:hover {
+  background-color: rgb(20, 20, 20); /* Mantiene el color sin cambios */
+  width: 50px; /* Evita la expansión del botón */
+}
+
+.disabled:hover .svgIcon1,
+.disabled:hover .svgIcon2 {
+  transform: none; /* Evita el movimiento del ícono */
+}
+
+
+.viewMore {
+  font-family: 'carmen-sans-regular', sans-serif;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.452);
+  color: white;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: ease-out .3s;
+}
+.viewMore:hover{
+  background: rgba(255, 255, 255, 0.199);
+}
+

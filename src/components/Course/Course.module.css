@@ -29,7 +29,7 @@
 
 .courseTitle img {
     vertical-align: middle;
-    width: clamp(200px, 25vw, 370px);
+    width: clamp(200px, 25vw, 375px);
     padding-bottom: 1%;
 }
 
@@ -108,7 +108,7 @@
     }
     .courseTitle img {
         vertical-align: middle;
-        width: 150px;
+        width: clamp(170px, 20vw, 200px);
     }    
     .cardContainer {
         flex-direction: row; /* Cuando la pantalla es mayor a 470px, las dos filas se vuelven columnas */
@@ -130,6 +130,9 @@
         width: 45vw;
         max-width: 180px;
     }
+    .courseTitle img {
+        width: 150px;
+    }    
 }
 
 @media (max-width: 375px) {
