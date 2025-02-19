@@ -1,22 +1,22 @@
 import express from "express";
-import cors from "cors";  // Solo esta importación es necesaria
+import cors from "cors";
 import fetch from "node-fetch";
+import dotenv from "dotenv";
+
+dotenv.config(); // Carga las variables de entorno desde .env
 
 const app = express();
-app.use(cors());  // Usamos cors aquí, sin la duplicación
-app.use(cors({ origin: "http://localhost:5173" })); // Permite solicitudes solo desde el frontend en puerto 3000
+app.use(cors({ origin: "http://localhost:5173" }));
 
-const API_KEY = "AIzaSyCaD2puH4q1wybYWXLApRSlCNhuREaknv8";
+const API_KEY = process.env.GOOGLE_API_KEY; // Obtiene la clave desde .env
 
 app.get("/", (req, res) => {
   res.send("Servidor funcionando correctamente!");
 });
 
 app.get("/reviews", async (req, res) => {
-  const placeId = "ChIJmcos9jjVoZUR4dhlzCQmTLI";  // Tu placeId
-  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&sort=newest&key=${API_KEY}`;
-  
-  
+  const placeId = "ChIJmcos9jjVoZUR4dhlzCQmTLI"; // ID del lugar
+  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&sort=newest&key=${API_KEY}`;  
   try {
     const response = await fetch(url);
     const data = await response.json();
