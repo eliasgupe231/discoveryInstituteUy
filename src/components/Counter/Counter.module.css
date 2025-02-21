@@ -1,0 +1,22 @@
+
+@font-face {
+    font-family: 'carmen-sans-md';
+    src: url('../public/fonts/CarmenSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'carmen-sans-lg';
+    src: url('../public/fonts/CarmenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'carmen-sans-regular';
+    src: url('../public/fonts/CarmenSans-Regular.ttf') format('truetype');
+}
+
+.counter{
+    font-size: clamp(35px, 6vw, 180px);
+    font-family: 'carmen-sans-md', sans-serif;
+    font-weight: 1000;
+    color: var(--primary-color);
+}

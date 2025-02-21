@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from "react";
+import styles from './Counter.module.css';
+
 
 const AnimatedCounter = ({ endValue, label, duration = 0.001 }) => {
   const [count, setCount] = useState(0);
@@ -42,7 +44,7 @@ const AnimatedCounter = ({ endValue, label, duration = 0.001 }) => {
   }, [isVisible]);
 
   return (
-    <div ref={counterRef} style={{ fontSize: "2rem", fontWeight: "bold", textAlign: "center" }}>
+    <div className={styles.counter} ref={counterRef}>
         {label} {count} 
     </div>
   );

@@ -220,6 +220,9 @@ nav button:hover{
 }
 
 @media (max-width: 594px){  
+    .header{
+        padding: 30px 10% 0 15px;    
+    }
     .headerLg{
         width: 250px;
     }

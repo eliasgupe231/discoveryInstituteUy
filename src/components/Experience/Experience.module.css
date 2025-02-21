@@ -15,6 +15,11 @@
     src: url('../public/fonts/CarmenSans-Regular.ttf') format('truetype');
 }
 
+.experienceContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
 
 .experienceTitle{
     display: flex;
@@ -28,7 +33,7 @@
     display: inline-block;
     color: var(--primary-color);
     font-family: 'carmen-sans-regular', sans-serif;
-    font-size: clamp(13px, 3.5vw, 50px);
+    font-size: clamp(12px, 3.8vw, 50px);
 }
 .experienceTitle img {
     padding-top: 1%;
@@ -36,3 +41,28 @@
     vertical-align:top;
 }
 
+.aniosContainer, .studentsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.aniosContainer p, .studentsContainer p{
+    color: var(--primary-color);
+    font-family: 'carmen-sans-regular', sans-serif;
+    font-size: clamp(15px, 3vw, 50px);
+}
+
+
+@media (max-width: 766px){
+    .aniosContainer, .studentsContainer{
+        gap: 10px;
+    }
+
+    .experienceContainer{
+        gap: 20px;
+    }
+    
+    
+}
