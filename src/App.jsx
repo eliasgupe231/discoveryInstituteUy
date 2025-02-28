@@ -4,6 +4,7 @@ import Nosotros from './pages/Nosotros';
 import Cursos from './pages/Cursos';
 import Inicio from './pages/Inicio';
 import { Routes, Route } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/nosotros" element={<Nosotros />} />
                 <Route path="/cursos" element={<Cursos />} />
             </Routes>
+            <Footer />
         </>
     );
 }

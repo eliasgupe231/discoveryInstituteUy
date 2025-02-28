@@ -1,0 +1,101 @@
+.footer {
+    background-color: #0b3c91;
+    color: white;
+    padding: 2rem;
+    border-radius: 100px 100px 0 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .contact {
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .contact h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 1rem;
+  }
+  
+  .icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .email {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .mobilePhone {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    font-size: 0.9rem;
+  }
+  .phone{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    font-size: 0.9rem;
+  }
+  .iconPhone {
+    margin-right: 8px;
+  }
+  
+  .links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+  }
+  
+  .links h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+  }
+  
+  .links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .links li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .links li:hover {
+    color: #ffdd57;
+  }
+  
+  .logo {
+    flex: 1;
+    color: #a3d4ff;
+  }
+
+  .logo img{
+    width: 20vw;
+  }
+  

@@ -24,7 +24,7 @@
 
 body{
     background-color: var(--light-color);
-    height: 10000px;
+    height: auto;
 }
 
 h1{
