@@ -1,22 +1,20 @@
 @import url('../../variables.css');
 
-
-@import url('../../variables.css');
-
 @font-face {
     font-family: 'carmen-sans-md';
-    src: url('../public/fonts/CarmenSans-Medium.ttf') format('truetype');
+    src: url('../fonts/CarmenSans-Medium.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'carmen-sans-lg';
-    src: url('../public/fonts/CarmenSans-Light.ttf') format('truetype');
+    src: url('../fonts/CarmenSans-Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'carmen-sans-regular';
-    src: url('../public/fonts/CarmenSans-Regular.ttf') format('truetype');
+    src: url('../fonts/CarmenSans-Regular.ttf') format('truetype');
 }
+
 
 .presentation{
     width: 100%;
@@ -94,7 +92,7 @@
     display: inline;
     font-size: clamp(2rem, 3vw, 4vw);
     font-weight: 400;
-    font-family: 'carmen-sans-md', sans-serif;
+    font-family: 'carmen-sans-regular', sans-serif;
     margin-bottom: 20px;
 }
 
