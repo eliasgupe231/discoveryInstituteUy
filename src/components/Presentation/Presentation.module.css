@@ -20,7 +20,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding-left: 70px ;
+    padding: 10em 0 0 70px;
     background-color: var(--primary-color);
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
@@ -215,7 +215,7 @@
 }
 @media (max-width : 766px) {
     .presentation{
-        height: 500px;
+        height: 660px;
         border-bottom-left-radius: 70px;
         border-bottom-right-radius: 70px;
     }
@@ -224,7 +224,8 @@
 @media (max-width : 594px){
     .presentation{
         height: 400px;
-        padding-left: 10px;
+        padding: 50px 10% 400px 15px;    
+
     }
 }
 

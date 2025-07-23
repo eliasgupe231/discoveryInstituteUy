@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion"; // Importamos Framer Motion
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,9 +13,28 @@ const Header = () => {
   const changeMenuBurguer = () => {
     setMenuBurguer(!menuBurguer);
   };
+  const [scrollDirection, setScrollDirection] = useState("up");
+  const lastScrollY = useRef(window.scrollY);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setScrollDirection("down");
+      } else if (currentScrollY < lastScrollY.current) {
+        setScrollDirection("up");
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className={styles.header}>
+  <header className={`${styles.header} ${styles[scrollDirection]}`}>
       <NavLink to="/">
         <img className={styles.headerLg} src={logo} alt="Logo de la empresa" />
       </NavLink>
@@ -23,7 +42,6 @@ const Header = () => {
       {/* Icono de menú hamburguesa (solo visible en pantallas pequeñas) */}
       <NavLink
         onClick={() => changeMenuBurguer()}
-        to="/"
         className={menuBurguer ? styles.iconMenuBurguer : styles.notShowMenuBurguer}
       >
           <FontAwesomeIcon className={styles.iconMenuBurguerBars} icon={faBars} size="3x" />  
@@ -61,13 +79,13 @@ const Header = () => {
               <FontAwesomeIcon className={styles.closeIcon} icon={faXmark} size="3x" onClick={() => changeMenuBurguer()} />
             </div>
 
-            <NavLink to="/" className={styles.linkInicio}>
+            <NavLink to="/" className={({ isActive }) => (isActive ? styles.activeLink : styles.link)} onClick={() => changeMenuBurguer()}>
               Inicio
             </NavLink>
-            <NavLink to="/nosotros" className={({ isActive }) => (isActive ? styles.activeLink : styles.link)}>
+            <NavLink to="/nosotros" className={({ isActive }) => (isActive ? styles.activeLink : styles.link)} onClick={() => changeMenuBurguer()}>
               Nosotros
             </NavLink>
-            <NavLink to="/cursos" className={({ isActive }) => (isActive ? styles.activeLink : styles.link)}>
+            <NavLink to="/cursos" className={({ isActive }) => (isActive ? styles.activeLink : styles.link)} onClick={() => changeMenuBurguer()}>
               Cursos
             </NavLink>
             <button>Contacto</button>

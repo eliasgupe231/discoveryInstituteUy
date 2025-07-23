@@ -15,15 +15,15 @@
 
 .googleReviewsContainer{
   display: flex;
-  align-items: center;
-  gap: 10%;
-  padding-left: 10px;
+  align-items: center;  
+  justify-content: space-around;
+  padding: 10px;
 } 
 
 .reviewContainer {
-  width: 100%;
+  width: 50%;
   max-width: 500px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   text-align: center;
   position: relative;
@@ -33,9 +33,10 @@
   align-items: center;
   gap: 10px;
 }
+
 .reviewTextContainer p{
   color: var(--primary-color);
-  font-size: clamp(20px, 3vw, 50px);
+  font-size: clamp(20px, 2.5vw, 50px);
   font-family: 'carmen-sans-md', sans-serif;
 }
 
@@ -44,18 +45,22 @@
   justify-content: center;
   flex-direction: column;
   gap: 10px;
-  min-height: 200px;
 }
 
 .review {
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
   border-radius: 12px;  
+  min-height: 242px;
+  min-width: 300px;
   background-color: #ffffff2a;
   backdrop-filter: blur(3px); /* Desenfoque para mejorar la transparencia */
   transition: transform 0.3s ease, background-color .5s ease-in;
 }
 .review:hover{
-  transform: translateY(-1px); /* Efecto de elevación */
+  transform: translateY(-2px); /* Efecto de elevación */
   background-color: #ffffff8e;
 }
 
@@ -63,17 +68,18 @@
   font-family: 'carmen-sans-regular', sans-serif;
   font-weight: 700;
   color: var(--primary-color);
-  font-size: clamp(18px, 1.5vw, 50px);
+  font-size: clamp(15px, 1vw, 40px);
 }
 
 
 .rating {
-  color: #ffa500;
+  color: #fffb1e;
 }
 .review p{
   font-family: 'carmen-sans-lg', sans-serif;
   color: var(--primary-color);
-  font-size: clamp(15px, 1vw, 30px);
+  font-size: clamp(13px, 0.8vw, 30px);
+  font-weight: 500;
 }
 /* Botones de navegación redondos */
 /* From Uiverse.io by vinodjangid07 */ 
@@ -228,4 +234,17 @@
 .viewMore:hover{
   background: #ffffff8e;
 }
+
+@media (max-width: 767px) {  
+  .googleReviewsContainer{
+  flex-direction: column;
+  align-items:center;  
+  justify-content: center;
+  padding-top: 10%;
+  } 
+  .reviewTextContainer p{
+  font-size: clamp(25px, 2.5vw, 50px);
+  text-align: center;
+}
+} 
 

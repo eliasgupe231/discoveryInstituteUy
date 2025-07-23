@@ -27,4 +27,4 @@ app.get("/reviews", async (req, res) => {
   }
 });
 
-app.listen(5000, () => console.log("Servidor corriendo en http://localhost:5000"));
+app.listen(5000, () => console.log("Servidor backend corriendo en http://localhost:5000"));
