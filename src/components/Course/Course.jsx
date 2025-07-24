@@ -68,8 +68,8 @@ const Course = () => {
     }, []);
 
     // Animaciones diferentes para desktop y mobile
-    const opacity = useTransform(scrollYProgress, [0, isMobile ? 0.04 : 0.1], [0.1, 1]);
-    const scale = useTransform(scrollYProgress, [0, isMobile ? 0.05 : 0.08], [0.8, 1]);
+    const opacity = useTransform(scrollYProgress, [0, isMobile ? 0.2: 0.3], [0.2, 1]);
+    const scale = useTransform(scrollYProgress, [0, isMobile ? 0.2: 0.3], [0.2, 1]);
 
     return (
         <>

@@ -16,11 +16,11 @@
 }
 
 
-.presentation{
+.presentation{  
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 10em 0 0 70px;
+    padding: 7em 0 0 70px;
     background-color: var(--primary-color);
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
