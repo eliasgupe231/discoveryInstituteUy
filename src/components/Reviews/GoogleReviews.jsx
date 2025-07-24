@@ -5,22 +5,7 @@ import styles from "./GoogleReviews.module.css";
 const GoogleReviews = () => {
   const reviews = useGoogleReviews();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [reviewsPerPage, setReviewsPerPage] = useState(3);
-
-  // Detectar tamaño de pantalla y ajustar cantidad de reseñas visibles
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setReviewsPerPage(1);
-      } else {
-        setReviewsPerPage(3);
-      }
-    };
-
-    handleResize(); // Llamar una vez al montar el componente
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const [reviewsPerPage, setReviewsPerPage] = useState(1);
 
   useEffect(() => {
     if (reviews.length > 0 && currentIndex >= reviews.length - (reviewsPerPage - 1)) {
