@@ -32,6 +32,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+  padding-bottom: 50px;
 }
 
 .reviewTextContainer p{
@@ -235,7 +236,7 @@
   background: #ffffff8e;
 }
 
-@media (max-width: 767px) {  
+@media (max-width: 1024px) {  
   .googleReviewsContainer{
   flex-direction: column;
   align-items:center;  

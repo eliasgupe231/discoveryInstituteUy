@@ -16,6 +16,18 @@ const Header = () => {
   const [scrollDirection, setScrollDirection] = useState("up");
   const lastScrollY = useRef(window.scrollY);
 
+
+  useEffect(() => {
+  if (!menuBurguer) {
+    document.body.classList.add("overflow-hidden");
+  } else {
+    document.body.classList.remove("overflow-hidden");
+  }
+
+  // Limpieza por si el componente se desmonta
+  return () => document.body.classList.remove("overflow-hidden");
+}, [menuBurguer]);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -34,7 +46,7 @@ const Header = () => {
   }, []);
 
   return (
-  <header className={`${styles.header} ${styles[scrollDirection]}`}>
+  <header className={`${styles.header} ${styles[scrollDirection]} ${scrollDirection === 'up' ? styles.headerTransparent : ''}`}>
       <NavLink to="/">
         <img className={styles.headerLg} src={logo} alt="Logo de la empresa" />
       </NavLink>

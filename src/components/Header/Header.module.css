@@ -29,14 +29,19 @@
     top: 0;
     z-index: 100;
     transition: transform 0.4s ease-in-out;
+    border-radius: 0 0 100px 100px;
 }
 
 .header.down {
-  transform: translateY(-100%);
+    transform: translateY(-100%);
 }
 
 .header.up {
-  transform: translateY(0);
+    transform: translateY(0);
+}
+.headerTransparent {
+  background-color: rgba(0, 51, 153, 0.75); /* Color semitransparente */
+  backdrop-filter: blur(6px);
 }
 .inicioLink{        
     width: 25%;
@@ -230,6 +235,11 @@ nav button:hover{
 
 
 }
+@media (max-width: 768px){  
+    .header{
+        border-radius: 0 0 70px 70px;
+    }
+}
 
 @media (max-width: 594px){  
     .header{
@@ -237,7 +247,7 @@ nav button:hover{
         height: 100px;
     }
     .headerLg{
-        width: 250px;
+        width: 240px;
     }
     .link{
         font-size: 25px;
