@@ -6,7 +6,7 @@ const useGoogleReviews = (placeId) => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await fetch("http://localhost:5000/reviews");
+        const response = await fetch("https://discoveryinstituteuy.onrender.com");
         const data = await response.json();
         if (data.result?.reviews) {
           setReviews(data.result.reviews);
