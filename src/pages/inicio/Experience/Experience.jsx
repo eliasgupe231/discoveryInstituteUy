@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './Experience.module.css'
 import Counter from "../../../components/Counter/Counter";
-import logo from "../../../assets/logo sin baseline-10.png"; // 
+import logo from "../../../assets/logo-sin-baseline-10.png"; 
 
 const Experience = () =>{ 
     return (

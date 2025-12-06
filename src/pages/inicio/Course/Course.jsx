@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import styles from './Course.module.css';
-import logo from '../../../assets/Logo sin baseline-10.png';
+import logo from '../../../assets/logo-sin-baseline-10.png';
 import Card from "../../../components/Cards/Cards";
 import { useEffect, useState } from "react";
 
