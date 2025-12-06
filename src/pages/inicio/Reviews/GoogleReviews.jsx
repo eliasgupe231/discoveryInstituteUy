@@ -64,7 +64,7 @@ const GoogleReviews = () => {
           rel="noopener noreferrer"
           className={styles.viewMore}
         >
-          Ver más reseñas en Google
+          Ver más reseñas
         </a>
       </div>
     </div>

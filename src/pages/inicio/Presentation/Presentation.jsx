@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion"; // Importar motion de framer-motion
 import styles from "./Presentation.module.css";
-import logo from "../../assets/disalon.png";
-import arrow from '../../assets/presentationArrow.png';
+import logo from "../../../assets/disalon.png";
+import arrow from '../../../assets/presentationArrow.png';
 
 function Presentation() {
   const [isLoaded, setIsLoaded] = useState(false);

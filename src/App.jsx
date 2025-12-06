@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './components/Header/Header';
-import Nosotros from './pages/Nosotros';
+import Nosotros from './pages/nosotros/Nosotros';
 import Cursos from './pages/Cursos';
-import Inicio from './pages/Inicio';
+import Inicio from './pages/inicio/Inicio';
 import { Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 

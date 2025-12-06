@@ -1,0 +1,52 @@
+@import url('../../variables.css');
+
+
+@font-face {
+    font-family: 'carmen-sans-md';
+    src: url('../fonts/CarmenSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'carmen-sans-lg';
+    src: url('../fonts/CarmenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'carmen-sans-regular';
+    src: url('../fonts/CarmenSans-Regular.ttf') format('truetype');
+}
+
+
+.nosotrosIntro{
+    width: 100%;
+    padding: 170px 40px 0 40px;
+    
+}
+.nosotrosTitleContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.title{
+    font-size: clamp(20px, 4.5vw, 4rem);
+    font-family: 'carmen-sans-md', sans-serif;
+    color: var(--primary-color);
+    margin-top: 20px;
+}
+.logoTitle{
+    width: 10%;
+    max-width: 150px;
+    min-width: 200px;
+}
+
+@media (max-width: 596px) {
+    .nosotrosIntro{
+
+        padding: 100px 20px 0 20px;
+    }
+    .logoTitle{
+        width: 15%;
+        min-width: 50px;
+    }
+}

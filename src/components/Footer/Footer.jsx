@@ -42,7 +42,7 @@ const Footer = () => {
               <li>Adultos</li>
               <li>Objetivos específicos</li>
               <li>Exámenes internacionales</li>
-              <li>Horarios 2025</li>
+              <li>Horarios 2026</li>
             </ul>
           </div>
         </div>
@@ -51,6 +51,10 @@ const Footer = () => {
         <div className={styles.logo}>
             <img src={icono} alt="logo de la empresa" />
         </div>
+      </div>
+      <div className={styles.copy}>
+        <p className={styles.credits}>DEVELOPED BY <a href="https://github.com/eliasgupe231">ELÍAS PEREIRA</a> - DESIGNED BY <a href="">Marine Studio</a></p>
+        <p>© Copyright - Discovery Institute - 2025</p>
       </div>
     </footer>
   );

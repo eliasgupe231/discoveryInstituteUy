@@ -15,6 +15,7 @@ const Header = () => {
   };
   const [scrollDirection, setScrollDirection] = useState("up");
   const lastScrollY = useRef(window.scrollY);
+  const [hasScrolled, setHasScrolled] = useState(false); //para evitar que el header se vuelva transparente al inicio
 
 
   useEffect(() => {
@@ -32,21 +33,31 @@ const Header = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+      if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
         setScrollDirection("down");
       } else if (currentScrollY < lastScrollY.current) {
         setScrollDirection("up");
+      } else if (currentScrollY <= 1) {
+        setScrollDirection("");
+      }
+
+      // Marcar que el usuario ya hizo scroll alguna vez
+      if (currentScrollY > 0 && !hasScrolled) {
+        setHasScrolled(true);
+      } else if (currentScrollY === 0) {
+        setHasScrolled(false);
       }
 
       lastScrollY.current = currentScrollY;
     };
+
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-  <header className={`${styles.header} ${styles[scrollDirection]} ${scrollDirection === 'up' ? styles.headerTransparent : ''}`}>
+  <header className={`${styles.header} ${styles[scrollDirection]} ${scrollDirection === 'up' && hasScrolled ? styles.headerTransparent : ''}`}>
       <NavLink to="/">
         <img className={styles.headerLg} src={logo} alt="Logo de la empresa" />
       </NavLink>

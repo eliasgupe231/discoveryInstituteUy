@@ -1,4 +1,4 @@
-@import url('../../variables.css');
+@import url('../../../variables.css');
 
 @font-face {
     font-family: 'carmen-sans-md';
@@ -20,7 +20,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 7em 0 0 70px;
+    padding: 9.3em 0 0 70px;
     background-color: var(--primary-color);
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;
@@ -182,7 +182,6 @@
     .presentationTextContainer h1{
         padding-right: 20px;
         font-size:clamp(3rem, 7vw, 8vw) ;
-        font-family: 'carmen-sans-extraBd', sans-serif;
     }
     .presentationQuestion{
         font-size: clamp(1.5rem, 3vw, 4vw);
@@ -223,9 +222,11 @@
 
 @media (max-width : 594px){
     .presentation{
-        height: 400px;
-        padding: 50px 10% 400px 15px;    
-
+        height: 500px;
+        padding: 50px 0 400px 10px;    
+    }
+    .presentationDIImageResponsive img{
+        width: 70%;
     }
 }
 
