@@ -8,14 +8,14 @@ dotenv.config(); // Carga las variables de entorno desde .env
 const app = express();
 app.use(cors());
 
-const API_KEY = process.env.GOOGLE_API_KEY; // Obtiene la clave desde .env
+const API_KEY = process.env.GOOGLE_API_KEY; // 
 
 app.get("/", (req, res) => {
   res.send("Servidor funcionando correctamente!");
 });
 
 app.get("/reviews", async (req, res) => {
-  const placeId = "ChIJmcos9jjVoZUR4dhlzCQmTLI"; // ID del lugar
+  const placeId = "ChIJmcos9jjVoZUR4dhlzCQmTLI"; // 
   const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&sort=newest&key=${API_KEY}`;  
   try {
     const response = await fetch(url);

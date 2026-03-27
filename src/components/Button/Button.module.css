@@ -1,0 +1,24 @@
+.base {
+    background-color: var(--primary-color);
+    padding: 10px 30px 15px 30px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s; 
+    border: none;
+}
+
+.vacio {
+    color: var(--primary-color);
+    width: 50vw;
+    max-width: 300px;
+    background-color: var(--light-color);
+    border: 8px solid var(--primary-color);
+    transition: border 0.4s, background-color 0.4s, color 0.4s; 
+}
+
+.vacio:hover{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: 8px solid var(--light-color);
+}
+

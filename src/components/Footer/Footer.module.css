@@ -23,8 +23,8 @@
     color: white;
     border-radius: 100px 100px 0 0;
     padding: 20px 100px 60px 100px;
-    position: relative;
-    bottom: 0;
+    margin-top: 200px;
+    width: 100%;
   }
   
   .container {

@@ -1,6 +1,5 @@
 @import url('../../variables.css');
 
-
 @font-face {
     font-family: 'carmen-sans-md';
     src: url('../fonts/CarmenSans-Medium.ttf') format('truetype');
@@ -16,10 +15,19 @@
     src: url('../fonts/CarmenSans-Regular.ttf') format('truetype');
 }
 
+.background{
+    background-color: var(--primary-color);
+}
+.front{
+    background-color: var(--light-color);
+    border-radius: 80px 80px 0 0;
+    position: relative;
+    top: 150px;
+}
 
 .nosotrosIntro{
     width: 100%;
-    padding: 170px 40px 0 40px;
+    padding: 10px 40px 0 40px;
     
 }
 .nosotrosTitleContainer{
@@ -37,16 +45,204 @@
 .logoTitle{
     width: 10%;
     max-width: 150px;
-    min-width: 200px;
+    min-width: 100px;
+}
+.textStory{
+    padding: 20px 20px 10px 30px;
+}
+.textStory p{
+    color: var(--primary-color);
+    font-family: 'carmen-sans-lg';
+    font-size: 1.5rem;
+}
+.textStory span img{
+    width: 130px;
+    vertical-align:bottom;
+}
+.buttonNosotros p{
+    color: var(--primary-color);
+    font-family: 'carmen-sans-lg';
+    font-size: 1.5rem;
+}
+.buttonNosotros{
+    padding: 40px 20px 50px 20px;
+    gap: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonNosotros Button{
+    font-family: 'carmen-sans-lg';
+    font-size: 1.5rem;
 }
 
-@media (max-width: 596px) {
-    .nosotrosIntro{
+.nosotrosContainer{
+    border-radius: 80px 80px 0 0;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.nosotrosContainer img{
+    width: 40px;
+}
 
-        padding: 100px 20px 0 20px;
+h5{
+    padding: 30px 20px 0 20px;
+    color: var(--light-color);
+    font-family: 'carmen-sans-lg';
+    text-align: center;
+    font-size: clamp(20px, 4.5vw, 4rem);
+}
+.nosotrosContainer p{
+    color: var(--light-color);
+    font-family: 'carmen-sans-lg';
+    font-size: clamp(15px, 2.5vw, 1.5rem);
+    text-align: center;
+}
+
+.staffContainer{
+    background-color: var(--primary-color);
+    padding: 30px 20px 0 20px;
+}
+.teachersTitle{
+    font-size: clamp(25px, 3vw, 3rem);
+    font-family: 'carmen-sans-lg';
+    color: var(--light-color);
+    text-align: center; 
+    padding-bottom: 20px;
+}
+.teachersSubtitle{
+    padding: 30px;
+    color: var(--light-color);
+    font-family: 'carmen-sans-lg';
+    font-size: clamp(15px, 2.5vw, 1.5rem);
+    text-align: center;
+}
+.teacherCaption2 p{
+    text-align: end;
+}
+.teacherCaption2, .teacherCaption{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.staffPhotos{
+    overflow: hidden; /* previene scroll por animaciones/transform */
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 20px 0 20px 0;
+    width: auto;
+    border-radius: 0 0 80px 80px;
+}
+.teacherContainer{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.teacherPresentation strong{
+    font-family: 'carmen-sans-regular';
+    color: var(--light-color);
+    font-weight: 800;
+    font-size: clamp(20px, 3vw, 3rem);
+}
+.teacherPresentation{
+    font-family: 'carmen-sans-lg';
+    color: var(--light-color);
+    font-size: clamp(15px, 2.5vw, 2rem);
+}
+.teacherDescription{
+    font-family: 'carmen-sans-lg';
+    font-size: clamp(15px, 2.5vw, 1.5rem);
+    color: var(--light-color);
+}
+
+
+.staffPhotos img{
+    width: 15vw;
+    min-width: 100px;
+}
+
+.interiorContainer{
+    padding: 50px 0 0 0;
+}
+
+.carrouselContainer{
+    padding: 30px;
+}
+
+.carrouselContainer p{
+    color: var(--primary-color);
+    font-family: 'carmen-sans-lg';
+    font-size: clamp(15px, 2.5vw, 1.5rem);
+}
+.carrouselContainer span img{
+    width: 15%;
+    min-width: 100px;
+    max-width: 130px;
+    vertical-align:bottom;
+}
+
+.interiorTitle{
+   font-size: clamp(20px, 3vw, 3rem);
+   text-align: center;
+   color: var(--primary-color); 
+   font-family: 'carmen-sans-md';
+   font-weight: 600;
+}
+@media (max-width: 596px) {
+
+    .front{
+        background-color: var(--light-color);
+        border-radius: 80px 80px 0 0;
+        position: relative;
+        top: 110px;
+    }
+    .nosotrosIntro{
+        padding: 20px 20px 0 20px;
     }
     .logoTitle{
         width: 15%;
         min-width: 50px;
+    }
+
+    .textStory p{
+    font-size: 1rem;
+    }
+    .textStory span img{
+    width: 90px;
+    }
+    
+
+    .buttonNosotros p{
+        font-size: 1rem;
+        text-align: center;
+    }
+    .buttonNosotros Button{
+        font-size: 1rem;
+        border-width: 5px;
+        width: 80vw;
+    }
+
+    .buttonNosotros{
+        padding: 30px 20px 50px 20px;
+        gap: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    h5{
+        font-size: 1.5rem;
+    }
+    .teachersSubtitle{
+        padding: 10px;
     }
 }
